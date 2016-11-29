@@ -5,7 +5,8 @@ Maintainer: Semi Malinen <semi.malinen@nokia.com>
 Uploaders: Ismo Laitinen <ismo.laitinen@nokia.com>, David Weinehall <david.weinehall@nokia.com>, Philippe De Swert <philippe.de-swert@nokia.com>
 Build-Depends: debhelper (>= 4.1.0),
  pkg-config,
- libglib2.0-dev
+ libglib2.0-dev,
+ bash
 Standards-Version: 3.7.2
 
 Package: libdsme0.2.0
