@@ -1,6 +1,9 @@
 #
 # Build targets
 #
+
+SHELL := /bin/bash
+
 A_LIBRARIES  := libdsme
 SO_LIBRARIES := libdsme libdsme_dbus_if
 
