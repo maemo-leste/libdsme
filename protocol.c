@@ -38,6 +38,7 @@
 #include <fcntl.h>
 #include <sys/socket.h>
 #include <sys/un.h>
+#include <sys/uio.h>
 #include <string.h>
 #include <stdlib.h>
 
