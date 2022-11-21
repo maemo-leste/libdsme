@@ -24,7 +24,7 @@ endif
 ifneq (,$(findstring testcases,$(DEB_BUILD_OPTIONS)))
 	DH_OPTIONS=
 else
-	DH_OPTIONS=-Ndsme-testcases
+	DH_OPTIONS=
 endif
 
 configure: configure-stamp
@@ -61,7 +61,7 @@ clean:
 install:
 	dh_testdir
 	dh_testroot
-	dh_clean -k -s
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into
