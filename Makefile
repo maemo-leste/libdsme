@@ -110,10 +110,3 @@ tags:
 .PHONY: doc
 doc:
 	doxygen
-
-
-.PHONY: test
-test: all
-	make -C test depend
-	make -C test
-	make -C test run
