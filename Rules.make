@@ -185,7 +185,7 @@ $(DISTCLN_SUBDIRS):
 # Common rule for all executables
 ifndef INSTALLING
 $(BINARIES):
-	$(CC) -o $@ $(LDFLAGS) $(call TARGET_OBJS,$@) $(addprefix -l,$($@_SO_LIBS) $($@_A_LIBS) $($@_LIBS))
+	$(CC) -o $@ $(call TARGET_OBJS,$@) $(addprefix -l,$($@_SO_LIBS) $($@_A_LIBS) $($@_LIBS)) $(LDFLAGS)
 endif
 
 
@@ -199,7 +199,7 @@ endif
 # Common rule for all dynamic libraries
 $(C_SO_LIBS):
 ifndef INSTALLING
-	$(CC) -o $@.$(LIBRARY_VERSION) $(LD_GENFLAGS) -fPIC -shared -Wl,-soname -Wl,$@.$(LIBRARY_VERSION) $(addprefix -l,$($(patsubst %.so,%,$@)_SO_LIBS)) $($(patsubst %.so,%,$@)_EXTRA_LDFLAGS) $^ 
+	$(CC) -o $@.$(LIBRARY_VERSION) $(LD_GENFLAGS) -fPIC -shared -Wl,-soname -Wl,$@.$(LIBRARY_VERSION) $(addprefix -l,$($(patsubst %.so,%,$@)_SO_LIBS)) $^ $($(patsubst %.so,%,$@)_EXTRA_LDFLAGS)
 	ln -sf $@.$(LIBRARY_VERSION) $@
 else
 	@install -d $(INSTALL_DIR)
