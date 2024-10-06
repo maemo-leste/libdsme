@@ -168,7 +168,7 @@ void* dsmesock_receive(dsmesock_connection_t* conn)
                                                               msg->line_size_);
               if (newbuf == 0) return 0; /* Try again later */
               conn->buf     = newbuf;
-              conn->bufsize = msg->line_size_;
+              conn->bufsize = ((dsmemsg_generic_t*)newbuf)->line_size_;
           }
 
           while (conn->bufused < msg->line_size_) {
