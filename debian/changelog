@@ -1,3 +1,9 @@
+libdsme (0.60.33) unstable; urgency=medium
+
+  * Fix use-after-free in protocol.c
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sun, 06 Oct 2024 22:40:21 +0200
+
 libdsme (0.60.32) unstable; urgency=medium
 
   * Move LDFLAGS after the objects
